@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+        <link href="./css/login.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./easyui/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="./easyui/themes/icon.css">
+        <!--<link rel="stylesheet" type="text/css" href="./css/style.css">-->
+        <script type="text/javascript" src="./easyui/jquery.min.js"></script>
+        <script type="text/javascript" src="./easyui/jquery.easyui.min.js"></script>
+    </head>
+    <body>
+        <div class="login" id="login">
+            <div class="wrap">
+                <div class="left"></div>
+                <div class="right">
+                    <form id="loginForm" action="show.html" method="get">
+                        <p>
+                            用户名:&nbsp;
+                            <input class="easyui-textbox" id="username" data-options="width:150,iconCls:'icon-man',
+                            required:true,validType:'user[reg]',missingMessage:'请输入登录名'">
+                        </p>
+                        <p>
+                            密 &nbsp;码:&nbsp;
+                            <input id="password" class="easyui-textbox" name="password"
+                                   data-options="width:150,iconCls:'icon-lock',type:'password',required:true,
+                                   validType:'pass[reg1]',missingMessage:'请输入密码'">
+                        </p>
+                        <p>
+                            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()"
+                               style="width:50px;margin-left:25px">提交</a>
+                            <a href="javascript:void(0)" class="easyui-linkbutton"
+                               onclick="clearForm()" style="width:50px">重置</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    var reg=/^王淑娟$/;
+    var reg1=/^123456$/;
+    $.extend($.fn.validatebox.defaults.rules,{
+        user:{
+            validator:function(value,param){
+                return param[0].test(value);
+            },
+            message:'用户名不正确，请重新输入。'
+        },
+        pass:{
+            validator:function(value,param){
+                return param[0].test(value);
+            },
+            message:'密码不正确，请重新输入。'
+        }
+    });
+    function submitForm(){
+        var flag = $("#loginForm").form("validate");
+        if(flag){
+            $("#loginForm").submit();
+
+        }
+    }
+    function clearForm(){
+        $("#loginForm").form("reset");
+    }
+</script>

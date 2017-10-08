@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="./easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="text/javascript" src="./easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="./easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="./js/show.js"></script>
+    <script type="text/javascript" src="./js/windowui.js"></script>
+    <script type="text/javascript" src="./js/treeMenu.js"></script>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div class="top" data-options="region:'north'">
+    <div class="logo">
+        <img id="imgLogo" src="./images/logo.png"/>
+    </div>
+    <div class="logo1">
+        <a href="javascript:void(0)">修改密码</a> |
+        <a href="javascript:void(0)" onclick="javascript:location.replace('login.html')">退出</a>
+    </div>
+</div>
+<div class="foot" data-options="region:'south'">
+    <div class="footInfo">
+        <a href="#">客户服务</a> | <a href="#">隐私政策</a> | <a href="#">网站地图</a> |
+        <a href="#">意见反馈</a> | <a href="#">信息举报</a> |
+        <span class="footNav"><span class="copy">&copy;</span>2000-2013 电子商务公司版权所有 </span>
+    </div>
+</div>
+<div data-options="region:'west'" title="导航菜单" style="width:13%">
+    <div class="layout_lefts">
+        <ul id="treeMenu" class="easyui-tree" data-options="url:'data/tree_data.json',method:'get',
+        dnd:true,animate:true,onAfterEdit:afterEdit,onContextMenu:contextMenuShow">
+        </ul>
+    </div>
+    <div id="treeContextMenu" class="easyui-menu">
+        <div onclick="append()" data-options="iconCls:'icon-add'">添加菜单</div>
+        <div onclick="edit()" data-options="iconCls:'icon-edit'">编辑菜单</div>
+        <div onclick="removeit()" data-options="iconCls:'icon-remove'">删除菜单</div>
+        <div class="menu-sep"></div>
+        <div onclick="expand()" id="op">展开</div>
+        <div onclick="collapse()" id="cl">折叠</div>
+    </div>
+</div>
+<div data-options="region:'center'">
+    <div id="tabContent" class="easyui-tabs" style="width:80%;height:auto" data-options="fit:true, border:false">
+        <div title="欢迎界面" data-options="closable:false">
+            <iframe src="./welcome.html" frameBorder="0" width="100%"  height="100%" scrolling="no"></iframe>
+        </div>
+    </div>
+</div>
+<!-- 班级管理右键弹出菜单 -->
+<div id="classMenu" class="easyui-menu"></div>
+
+<!-- 教师管理右键弹出菜单 -->
+<div id="teacherMenu" class="easyui-menu"></div>
+<!--学生管理的菜单栏-->
+<div id="tabToolBar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add'" onclick="addRow()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit'" onclick="editRow()">修改</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove'" onclick="delRow()">删除</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-load'" onclick="alert('下载成功')">模板下载</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-onload'" onclick="alert('导入成功')">批量导入</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-load'" onclick="alert('导出成功')">批量导出</a>
+    <a href="javascript:void(0)" style="margin-right:110px;" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" onclick="refre()">刷新</a>
+    <div class="easyui-searchbox" id="search"
+         data-options="prompt:'请输入搜索内容',menu:'#doSearchMenu'">
+    </div>
+    <div id="doSearchMenu">
+        <div data-options="name:'chinese',iconCls:'icon-man'">姓名</div>
+        <div data-options="name:'math',iconCls:'icon-man'">学号</div>
+        <div data-options="name:'English',iconCls:'icon-man'">院系</div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    $("#treeMenu").tree({
+        onClick:function(node){
+            if(node.attributes.flagIndex >= 4){
+                $.messager.alert("输出信息","你还没有操作权限");
+            }else if(node.attributes.flagIndex == -1){
+                $.messager.alert("输出信息","目前内容为空");
+            }else if(node.attributes.flagIndex==0){
+                return ;
+            }else{
+                //flagIndex=1,2,3
+                addPanel(node.text, node.attributes.flagIndex);
+            }
+        }
+    });
+</script>
+</html>

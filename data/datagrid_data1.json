@@ -1,0 +1,14 @@
+[
+  {"name":"计算机4班","classes":"2013","headteacher":"韩老师","teacher":"王东方，吕芳芳","number":24},
+  {"name":"计算机2班","classes":"2015","headteacher":"韩老师","teacher":"王东方，孙颖","number":19},
+  {"name":"WEB前端","classes":"2016","headteacher":"赵老师","teacher":"王东方，吕芳芳","number":6},
+  {"name":"Orical班","classes":"2016","headteacher":"赵老师","teacher":"王东方，孙颖","number":20},
+  {"name":"计算机3班","classes":"2016","headteacher":"韩老师","teacher":"孙颖，吕芳芳","number":15},
+  {"name":"g计算机","classes":"2016","headteacher":"李老师","teacher":"孙颖，吕芳芳","number":33},
+  {"name":"BS班","classes":"2016","headteacher":"李老师","teacher":"孙建阳，李娜","number":45},
+  {"name":"测试2班","classes":"2016","headteacher":"韩老师","teacher":"王东方，吕芳芳","number":24},
+  {"name":"测试1班","classes":"2016","headteacher":"韩老师","teacher":"王东方，吕芳芳","number":29},
+  {"name":"JAVA1班","classes":"2016","headteacher":"赵老师","teacher":"王东方，孙颖","number":34},
+  {"name":"测试3班","classes":"2016","headteacher":"赵老师","teacher":"王东方，孙颖","number":20},
+  {"name":"测试2016","classes":"2016","headteacher":"韩老师","teacher":"孙颖，吕芳芳","number":15}
+]

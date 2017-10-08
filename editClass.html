@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <div class="easyui-panel" style="width:300px;padding:10px;" data-options="border:false">
+        <form method="post" id="form1">
+            <table>
+                <tr>
+                    <td>名称：</td>
+                    <td><input type="text" name="name" id="name1" class="f1 easyui-textbox"/></td>
+                </tr>
+                <tr>
+                    <td>年级：</td>
+                    <td><input type="text" name="classes" id="classes" class="f1 easyui-textbox" data-options="required:true,missingMessage:'描述信息不能为空'"/></td>
+                </tr>
+                <tr>
+                    <td>班主任：</td>
+                    <td><input type="text" name="headteacher" id="headteacher" class="f1 easyui-textbox"/></td>
+                </tr>
+                <tr>
+                    <td>任课老师：</td>
+                    <td><input type="text" name="teacher" id="teacher" class="f1 easyui-textbox" data-options="required:true,missingMessage:'描述信息不能为空'"/></td>
+                </tr>
+                <tr>
+                    <td>人数：</td>
+                    <td><input type="text" name="number" id="number" class="f1 easyui-textbox"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <style type="text/css">
+        .f1{
+            width:200px;
+        }
+        tr{
+             height:30px;
+             line-height:30px;
+         }
+    </style>

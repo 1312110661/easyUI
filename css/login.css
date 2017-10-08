@@ -1,0 +1,12 @@
+body{background: #0185CD;}
+.login{width:749px;height:420px;margin:0 auto;text-align:center;
+    margin-top:120px;background: url(../images/bg-login.jpg) no-repeat;}
+#login .wrap {margin: 0 auto; text-align: center; width: 375px; height: 145px; padding-top: 60px;}
+#login .left {float: left; width: 117px; height: 137px;
+    background: url(../images/icon-lock.jpg) no-repeat;  margin-left: 0;}
+#login .right{
+    float:left; margin-left:0; width:255px; height:145px; padding-top:20px;
+}
+#login .right p{
+    color:#224E67; margin-top:10px;
+}

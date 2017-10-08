@@ -1,0 +1,88 @@
+/** 顶部 */
+.top{
+    font-size: 20px;
+    padding:10px 10px;
+    height:75px;
+}
+.logo{
+	width:80%;
+    float:left;
+}
+.imgLogo{
+	width:669px;
+	height:80px;
+}
+.logo1{
+    width:10%;
+    padding-right:10px;
+    padding-top:10px;
+    float:right;
+    text-align:right;
+    font-size:14px;
+}
+.logo1 a{
+    font-weight:bold;
+    text-decoration: none;
+}
+
+/** 左侧 */
+.layout_left{
+    margin-top:30px;
+}
+.layout_left ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+.layout_left ul li{
+    font-size:18px;
+    line-height: 50px;
+    padding-left:15px;
+}
+.layout_left ul li a{
+    text-decoration: none;
+}
+
+/** 票项管理CSS */
+.tickets{
+    width:100%;
+}
+.tickTable{
+    width:90%;
+    margin:30px auto;
+    border:1px solid #000;
+    border-collapse:collapse;
+}
+.tickTable td, th{
+    border:1px solid #000;
+    padding: 5px 10px;
+    text-align:center;
+}
+
+/** 分页CSS */
+#page{
+    width:26%;
+    margin:30px auto;
+}
+
+
+/** 底部 */
+.foot{
+    height:16px;
+}
+.footInfo{
+    background-color:#E0ECFF;
+    font-size:12px;
+    font-weight:bold;
+    color:#000;
+    text-align:center
+}
+
+.footInfo a{
+    text-decoration: none;
+    margin:10px 20px;
+    color:#0E2D5F;
+}
+.copy{
+    margin-left:10px;
+}
